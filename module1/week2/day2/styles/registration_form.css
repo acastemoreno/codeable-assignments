@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #edf2f7;
+}
+
+main {
+  width: 442px;
+  margin-top: 134px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Nunito;
+  font-style: normal;
+}
+
+header p {
+  text-align: center;
+}
+
+header p:first-child {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 140.62%;
+}
+
+header p:last-child {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 140.62%;
+}
+
+form > label,
+form > input {
+  display: block;
+}
+
+form > label,
+legend {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 140.62%;
+  /* identical to box height, or 20px */
+
+  text-transform: uppercase;
+}
+
+form > input,
+form > select {
+  width: 100%;
+  height: 46px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  background: #ffffff;
+  border-radius: 4px;
+}
+
+form > input:last-child {
+  background: #718096;
+  height: 40px;
+  color: white;
+}
+
+input#terms_of_use {
+  width: auto;
+  height: auto;
+}
+
+input#terms_of_use,
+input#terms_of_use + label {
+  display: inline;
+}
+
+.select-group {
+  margin-left: 25%;
+}
+
+select.select-group {
+  width: 50%;
+  height: auto;
+  overflow-y: auto;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+select.select-group option {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140.62%;
+  padding-left: 11px;
+}
+
+fieldset label {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 140.62%;
+}
+
+fieldset input {
+  margin: 0px;
+  line-height: 140.62%;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
