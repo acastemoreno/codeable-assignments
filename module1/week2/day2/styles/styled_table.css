@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+body {
+  font-family: Overpass;
+  font-style: normal;
+}
+
+thead tr {
+  border-bottom: 1px solid #1c1c1c;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+th,
+td {
+  text-align: right;
+  width: 200px;
+  padding: 24px 0px;
+  font-weight: 300;
+  vertical-align: middle;
+  min-height: 24px;
+}
+
+th:first-child,
+td:first-child {
+  text-align: left;
+  width: 336px;
+  padding-left: 37px;
+}
+
+th:first-child p,
+td:first-child p {
+  display: inline-block;
+  margin: 0px;
+  line-height: 24px;
+  margin-left: 34px;
+}
+
+div.checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #c9ccd4;
+}
+
+div.checkbox.checked {
+  background-image: url(../assets/check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #0ad1bd;
+  border: none;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 55px;
+}
