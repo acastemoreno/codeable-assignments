@@ -25,13 +25,43 @@ td {
 th:first-child,
 td:first-child {
   min-width: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+th:last-child,
+td:last-child {
+  min-width: auto;
+  padding-right: 16px;
 }
 
 input[type="radio"] {
-  width: 14px;
+  opacity: 0;
+}
+
+.radio_div::before {
+  content: "";
+  display: inline-block;
+
   height: 14px;
-  margin: 0;
-  background-color: white;
+  width: 14px;
+  border-radius: 7px;
+  border: 1px solid #c6cbd3;
+  left: -14px;
+}
+
+.radio_div {
+  position: relative;
+}
+
+.radio_div::before {
+  position: absolute;
+}
+
+input[type="radio"]:checked + .radio_div::before {
+  background-image: url(../assets/radio_active.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 td a {
@@ -52,5 +82,5 @@ td img {
 }
 
 tbody tr:nth-child(odd) {
-  background: #dadada;
+  background: #f2f3f5;
 }
