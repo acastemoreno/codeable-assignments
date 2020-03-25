@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+body {
+  font-family: Avenir;
+  font-style: normal;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 24px 0px;
+  font-weight: 300;
+  vertical-align: middle;
+  min-height: 24px;
+  padding-left: 16px;
+  min-width: 120px;
+}
+
+th:first-child,
+td:first-child {
+  min-width: auto;
+}
+
+input[type="radio"] {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  background-color: white;
+}
+
+td a {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration-line: none;
+  background: #4b74ff;
+  border-radius: 4px;
+  padding: 4px 15px;
+  margin-right: 7px;
+}
+
+td img {
+  margin: auto 9px auto 0;
+}
+
+tbody tr:nth-child(odd) {
+  background: #dadada;
+}
