@@ -4,14 +4,14 @@
 
 int get_int_len(long value);
 bool valid_base_luhn(long credit_card, int length_card);
-int *list_digits(long value);
-int sum_digits(long value);
+int sum_luhn(long value, int length_card);
 
 int main(void)
 {
   long card_number;
   bool valid;
   int length_card;
+  int two_di;
 
   do
   {
@@ -20,10 +20,28 @@ int main(void)
 
   //valid card number
   length_card = get_int_len(card_number);
+
   if (length_card == 15 || length_card == 13 || length_card == 16)
   {
     if (valid_base_luhn(card_number, length_card))
     {
+      two_di = card_number / pow(10, length_card - 2);
+      if (two_di == 34 || two_di == 37)
+      {
+        printf("AMEX\n");
+      }
+      else if (two_di == 51 || two_di == 52 || two_di == 53 || two_di == 54 || two_di == 55)
+      {
+        printf("MASTERCARD\n");
+      }
+      else if (two_di >= 40 && two_di <= 49)
+      {
+        printf("VISA\n");
+      }
+      else
+      {
+        printf("INVALID\n");
+      }
     }
     else
     {
@@ -44,48 +62,44 @@ int get_int_len(long value)
     length++;
     value = value / 10;
   }
-  printf("%i\n", length);
   return length;
 }
 
 bool valid_base_luhn(long credit_card, int length_card)
 {
-  int *list_dig;
+  int sum;
 
-  list_dig = list_digits(credit_card);
+  sum = sum_luhn(credit_card, length_card);
 
-  int suma_luhn = 0;
+  return sum % 10 == 0;
+}
 
+int sum_luhn(long value, int length_card)
+{
+  int sum = 0;
+  int digit;
+  int dob;
   for (int i = 0; i < length_card; i++)
   {
+    digit = value % 10;
+    value = (value - digit) / 10;
     if (i % 2 == 0)
     {
-      suma_luhn += list_dig[i];
-      printf("single: %i\n", list_dig[i]);
+      sum += digit;
     }
     else
     {
-      suma_luhn += (2 * list_dig[i]);
-      printf("doble: %i\n", 2 * list_dig[i]);
+      dob = digit * 2;
+      if (dob > 9)
+      {
+        sum += dob - 9;
+      }
+      else
+      {
+        sum += dob;
+      }
     }
   }
 
-  return suma_luhn % 10 == 0;
-}
-
-int *list_digits(long value)
-{
-  const int len = get_int_len(value);
-  int temp[len];
-  static int *ld;
-  ld = temp;
-  long tem = value;
-  for (int i = 0; i < len; i++)
-  {
-    ld[i] = tem % 10;
-    tem = (tem - ld[i]) / 10;
-    printf("%i\n", ld[i]);
-  }
-
-  return ld;
+  return sum;
 }
