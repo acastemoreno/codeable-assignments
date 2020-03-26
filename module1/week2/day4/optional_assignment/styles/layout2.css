@@ -12,18 +12,24 @@ body {
   width: 100%;
   min-height: 100%;
   display: grid;
-  grid-template-columns: 200px auto;
-  grid-template-rows: 100px auto 100px;
+  grid-template-columns: 175px 600px;
+  grid-template-rows: 123px 465px 165px 100px;
   grid-template-areas:
-    "header header"
+    ". header"
     "sidebar main"
-    "sidebar footer";
+    ". main"
+    ". footer";
+
+  justify-content: center;
+  align-content: center;
 
   font-family: Nunito;
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
   line-height: 30px;
+  column-gap: 24px;
+  row-gap: 32px;
 }
 
 body > * {
@@ -33,17 +39,17 @@ body > * {
 }
 
 header {
-  background-color: red;
+  background-color: #c4c4c4;
   grid-area: header;
 }
 
 section {
-  background-color: yellow;
+  background-color: #ff0000;
   grid-area: sidebar;
 }
 
 main {
-  background-color: green;
+  background-color: #20e056;
   grid-area: main;
 }
 
