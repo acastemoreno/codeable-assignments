@@ -69,6 +69,7 @@ header .content {
   letter-spacing: -0.5px;
 
   color: #000000;
+  margin-top: 8px;
 }
 
 .make_special .content {
@@ -169,6 +170,9 @@ header .content {
   .make_special {
     grid-area: special;
     margin-bottom: 0px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 17px;
   }
 
   .features {
@@ -179,12 +183,6 @@ header .content {
   .make_special,
   .features h2 {
     text-align: left;
-  }
-
-  .make_special {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 17px;
   }
 
   .make_special .experience {
@@ -212,4 +210,71 @@ header .content {
 }
 
 @media screen and (min-width: 1440px) {
+  .container {
+    padding: 64px 150px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header special special"
+      "features features features";
+    gap: 148px 104px;
+  }
+
+  header {
+    grid-area: header;
+    margin-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  header .caption {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .make_special {
+    grid-area: special;
+    margin-bottom: 0px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 62px 128px;
+  }
+
+  .features {
+    grid-area: features;
+  }
+
+  header,
+  .make_special,
+  .features h2 {
+    text-align: left;
+  }
+
+  .make_special .experience {
+    padding: 0px;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, min-content) auto;
+    grid-template-areas:
+      "img h2"
+      "img feature1"
+      "img feature2"
+      "img .";
+    column-gap: 105px;
+  }
+
+  .features > img {
+    margin-bottom: 31px;
+  }
+
+  .features h2 {
+    text-align: left;
+    margin-bottom: 42px;
+    margin-top: 50px;
+  }
+
+  .features .feature {
+    margin-bottom: 50px;
+  }
 }
