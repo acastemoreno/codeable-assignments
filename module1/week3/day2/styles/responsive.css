@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0px auto;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+header {
+  padding: 0px 22px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: Overpass;
+  font-style: normal;
+  margin-bottom: 30px;
+}
+
+header .caption {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 36px;
+
+  letter-spacing: -1px;
+
+  color: #000000;
+}
+
+header .content {
+  margin-top: 15px;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 31px;
+
+  color: #666666;
+}
+
+.make_special {
+  text-align: center;
+  font-family: Overpass;
+  font-style: normal;
+  margin-bottom: 30px;
+}
+
+.make_special .experience {
+  margin: 0px 64px 20px 64px;
+}
+
+.make_special .caption {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 34px;
+  /* or 189% */
+
+  text-align: center;
+  letter-spacing: -0.5px;
+
+  color: #000000;
+}
+
+.make_special .content {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+
+  text-align: center;
+
+  color: #7a7a7a;
+}
+
+.features {
+  font-family: Overpass;
+  font-style: normal;
+}
+
+.features h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 36px;
+  letter-spacing: -1.5px;
+
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.features .feature {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "img caption"
+    "img content";
+  column-gap: 17px;
+  margin-bottom: 10px;
+}
+
+.features .feature img {
+  grid-area: img;
+}
+
+.features .feature .caption {
+  grid-area: caption;
+
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+  color: #000000;
+}
+
+.features .feature .content {
+  grid-area: content;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  color: #7a7a7a;
+}
+
+.features .all_features > img {
+  width: 100%;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1439px) {
+}
+
+@media screen and (min-width: 1440px) {
+}
