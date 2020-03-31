@@ -50,6 +50,8 @@ header .content {
 }
 
 .make_special {
+  display: grid;
+  flex-direction: column;
   text-align: center;
   font-family: Overpass;
   font-style: normal;
@@ -57,16 +59,13 @@ header .content {
 }
 
 .make_special .experience {
-  margin: 0px 64px 20px 64px;
+  padding: 0px 64px 20px 64px;
 }
 
 .make_special .caption {
   font-weight: bold;
   font-size: 18px;
   line-height: 34px;
-  /* or 189% */
-
-  text-align: center;
   letter-spacing: -0.5px;
 
   color: #000000;
@@ -76,18 +75,24 @@ header .content {
   font-weight: 300;
   font-size: 16px;
   line-height: 28px;
-
-  text-align: center;
-
   color: #7a7a7a;
 }
 
 .features {
   font-family: Overpass;
   font-style: normal;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "h2"
+    "feature1"
+    "feature2"
+    "img";
 }
 
 .features h2 {
+  grid-area: h2;
   text-align: center;
   font-weight: bold;
   font-size: 36px;
@@ -107,6 +112,14 @@ header .content {
     "img content";
   column-gap: 17px;
   margin-bottom: 10px;
+}
+
+.features .feature:first {
+  grid-area: feature1;
+}
+
+.features .feature:last-child {
+  grid-area: feature2;
 }
 
 .features .feature img {
@@ -131,11 +144,71 @@ header .content {
   color: #7a7a7a;
 }
 
-.features .all_features > img {
+.features > img {
   width: 100%;
+  grid-area: img;
 }
 
 @media screen and (min-width: 769px) and (max-width: 1439px) {
+  .container {
+    padding: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header special special"
+      "features features features";
+    gap: 34px 17px;
+  }
+
+  header {
+    grid-area: header;
+    margin-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  .make_special {
+    grid-area: special;
+    margin-bottom: 0px;
+  }
+
+  .features {
+    grid-area: features;
+  }
+
+  header,
+  .make_special,
+  .features h2 {
+    text-align: left;
+  }
+
+  .make_special {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 17px;
+  }
+
+  .make_special .experience {
+    padding: 0px;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "img img"
+      "h2 h2"
+      "feature1 feature2";
+    column-gap: 15px;
+  }
+
+  .features > img {
+    margin-bottom: 31px;
+  }
+
+  .features h2 {
+    text-align: left;
+    margin-bottom: 15px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
