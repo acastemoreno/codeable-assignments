@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul.menu {
+  display: flex;
+  flex-direction: row;
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  list-style: none;
+}
+
+ul.menu > li {
+  border-bottom: 1px solid #ebebeb;
+  position: relative;
+}
+
+ul.menu > li:hover {
+  border-bottom: 1px solid blue;
+}
+
+ul.menu > li:hover a {
+  color: blue;
+}
+
+ul.menu > li a {
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #595959;
+  text-decoration: none;
+  padding: 5px 12px;
+}
+
+ul.menu ul.sub_menu {
+  position: absolute;
+  top: 30px;
+  width: 139px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 4px 0px;
+  display: none;
+  list-style: none;
+}
+
+ul.menu ul.sub_menu li {
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 11px 12px;
+
+  color: #595959;
+}
+
+ul.menu > li:hover::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: transparent;
+  width: 100%;
+  height: 8px;
+}
+
+ul.menu > li:hover ul.sub_menu {
+  display: block;
+  animation: submenu 1s both;
+}
+
+@keyframes submenu {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
