@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    gserver (0.0.1)
+    nyancat (0.2.1)
+      gserver (~> 0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nyancat (~> 0.2.1)
+
+BUNDLED WITH
+   2.1.4
